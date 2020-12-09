@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public CharacterController2D controller;
-
     public float MovementSpeed = 1;
     public float JumpForce = 1;
 
@@ -26,11 +24,4 @@ public class Movement : MonoBehaviour
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
     }
-
-    /*void FixedUpdate()
-    {
-        //ruch postaci
-        controller.Move(horizontalMove * Time.fixedDeltaTime, false, false);
-        
-    }*/
 }
