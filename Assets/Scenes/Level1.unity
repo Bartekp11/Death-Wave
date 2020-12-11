@@ -2038,6 +2038,7 @@ GameObject:
   - component: {fileID: 1940996175}
   - component: {fileID: 1940996177}
   - component: {fileID: 1940996176}
+  - component: {fileID: 1940996172}
   - component: {fileID: 1940996178}
   m_Layer: 8
   m_Name: Character
@@ -2046,6 +2047,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1940996172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940996171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da84626f02b4a04bbd1c864f49c9d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MovementSpeed: 4.7
+  JumpForce: 11.3
+  animator: {fileID: 1940996178}
 --- !u!212 &1940996173
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2104,8 +2120,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940996171}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: -1.75, z: 0}
-  m_LocalScale: {x: 0.7624226, y: 0.7624226, z: 0.7624226}
+  m_LocalPosition: {x: -7.93, y: -1.25, z: 0}
+  m_LocalScale: {x: 0.8480713, y: 0.8607324, z: 1}
   m_Children:
   - {fileID: 452132470}
   - {fileID: 500165020}
@@ -2175,20 +2191,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3516331, y: 1.9894631}
   m_EdgeRadius: 0
---- !u!114 &1940996178
-MonoBehaviour:
+--- !u!95 &1940996178
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940996171}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5da84626f02b4a04bbd1c864f49c9d65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MovementSpeed: 4.5
-  JumpForce: 11.7
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 31c24ece0d4b35043bbda42544523261, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1954793519
 GameObject:
   m_ObjectHideFlags: 0
