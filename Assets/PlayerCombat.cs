@@ -6,7 +6,7 @@ public class PlayerCombat : MonoBehaviour
 {
    
  
-
+public ParticleSystem sword;
     public Animator animator;
 
     public LayerMask enemyLayers;
@@ -24,6 +24,7 @@ public class PlayerCombat : MonoBehaviour
         {
              if(Input.GetKeyDown(KeyCode.Z))
         {
+            sword.Play();
             Attack();
             nextAttackTime = Time.time + 1f / attackRate;
         }

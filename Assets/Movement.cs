@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Movement : MonoBehaviour
 {
+    public ParticleSystem dust;
     public float MovementSpeed = 1;
     public float JumpForce = 1;
     public Animator animator;
@@ -22,17 +23,24 @@ public class Movement : MonoBehaviour
         transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
         if((movement < 0 && facingRight) || (movement > 0) && !facingRight)
         {
+           dust.Play();
             facingRight = !facingRight;
             transform.Rotate(new Vector3(0, 180, 0));
         }
            
          if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
         {
+            dust.Play();
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
        
         
         
         
+    }
+
+    public void CreateDust()
+    {
+        dust.Play();
     }
 }

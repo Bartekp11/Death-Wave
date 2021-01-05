@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float timer = 30.0f;
+    public float timer = 0.0f;
     public Animator animator;
     public int maxHealth = 100;
     int currentHealth;
@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+      
     }
 
     void Update()
@@ -36,17 +37,20 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        if(currentHealth == 60)
-        {
-            this.enabled = false;
-            timer -= Time.deltaTime;
-            
-           
-              
-        this.enabled = true;
-        
+
+        if(currentHealth == 20)
+            {
+                 StartCoroutine("MyCoroutine");
         }
-        if(currentHealth <= 0)
+        
+         if(currentHealth == 60)
+            {
+                 StartCoroutine("MyCoroutine");
+                }
+
+         
+        
+         if(currentHealth <= 0)
         {
             this.enabled = false;
         }    
@@ -76,5 +80,20 @@ public class Enemy : MonoBehaviour
         
         animator.enabled = false;
     }
+
+    IEnumerator MyCoroutine()
+{
+    speed  = 0;
+    yield return new WaitForSeconds(0.5F);
+    speed = 2;
+    
+}
+    IEnumerator MyCoroutine2()
+{
+    speed  = 0;
+    yield return new WaitForSeconds(0.5F);
+    speed = 2;
+    
+}
 
 }
