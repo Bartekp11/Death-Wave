@@ -12,6 +12,13 @@ public class ToNextScene : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        
+        if(currentLevel >= PlayerPrefs.GetInt("levelIsUnlocked"))
+        {
+            PlayerPrefs.SetInt("levelIsUnlocked",currentLevel + 1);
+        }
         SceneManager.LoadScene(nextSceneToLoad);
     }
+
 }
