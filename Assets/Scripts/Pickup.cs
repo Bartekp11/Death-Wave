@@ -9,12 +9,11 @@ public class Pickup : MonoBehaviour
    private void OnTriggerEnter2D(Collider2D collision)
    {
       Inventory manager = collision.GetComponent<Inventory>();
-       if(manager)
-       {
-           manager.PickupItem(gameObject);
+      if(collision.gameObject.tag == "Player")
+      {
+          Inventory.potionCount += 1;
            RemoveItem();
-       
-       }
+      }
       
    }
 

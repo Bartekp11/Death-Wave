@@ -15,6 +15,7 @@ public ParticleSystem sword;
     public int attackDamage = 40;
     public float attackRate = 2f;
     float nextAttackTime = 0f;
+    //public Animator camAnim;
 
 
 
@@ -24,6 +25,7 @@ public ParticleSystem sword;
         {
              if(Input.GetKeyDown(KeyCode.Z))
         {
+            //camAnim.SetTrigger("shake");
             sword.Play();
             Attack();
             nextAttackTime = Time.time + 1f / attackRate;

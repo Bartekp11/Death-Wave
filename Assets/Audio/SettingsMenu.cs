@@ -6,7 +6,7 @@ public class VolumeChanger : MonoBehaviour
 {
     private AudioSource AudioSrc;
 
-    private float AudioVolume = 1f;
+    private float AudioVolume = 0.5f;
 
     void Start()
     {

@@ -7,7 +7,7 @@ public class SettingsMenu : MonoBehaviour
 {
     private AudioSource AudioSrc;
 
-    private float AudioVolume = 1f;
+    private float AudioVolume = 0.5f;
 
     public Dropdown resolutionDropdown;
     Resolution[] resolutions;
