@@ -96,6 +96,7 @@ void Update()
     {
         timer -= Time.deltaTime;
         damaging = false;
+       
         if(timer <= 0 && cooling && attackMode)
         {
             cooling = false;
@@ -106,6 +107,7 @@ void Update()
     void StopAttack()
     {
         cooling = false;
+        damaging = false;
         attackMode = false;
         anim.SetBool("Attack", false);
     }
@@ -120,7 +122,8 @@ void Update()
         else if(attackDistance >= distance && cooling == false)
         {
             Attack();
-            if(damaging){
+            if(damaging)
+            {
             DealDamage();
             }
            
