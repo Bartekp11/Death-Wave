@@ -20,6 +20,16 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(3);
     }
 
+    public void PlayLevel4()
+    {
+        SceneManager.LoadScene(4);
+    }
+
+    public void PlayLevel5()
+    {
+        SceneManager.LoadScene(5);
+    }
+
     public void GoToSettings()
     {
         SceneManager.LoadScene("SettingsMenu");
