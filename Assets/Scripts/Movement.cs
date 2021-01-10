@@ -9,8 +9,13 @@ public class Movement : MonoBehaviour
     public Animator animator;
     private Rigidbody2D _rigidbody;
     private bool facingRight;
+    public int maxHealth = 100;
+    int PcurrentHealth;
+    public HealthBar  Pbar;
     private void Start()
     {
+        PcurrentHealth = maxHealth;
+        Pbar.SetHealth(PcurrentHealth, maxHealth);
         _rigidbody = GetComponent<Rigidbody2D>();
         facingRight = true;
     }
@@ -34,7 +39,10 @@ public class Movement : MonoBehaviour
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
        
-        
+        if(PcurrentHealth <= 0)
+        {
+            this.enabled = false;
+        }
         
         
     }
@@ -42,5 +50,15 @@ public class Movement : MonoBehaviour
     public void CreateDust()
     {
         dust.Play();
+    }
+
+     public void TakeDamage(int damage)
+    {
+        PcurrentHealth -= damage;
+        Pbar.SetHealth(PcurrentHealth, maxHealth);
+        if(PcurrentHealth <= 0)
+        {
+        Debug.Log("dead");
+        }
     }
 }
