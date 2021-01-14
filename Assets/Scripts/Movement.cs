@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Movement : MonoBehaviour
 {
+    public AudioClip runSound;
+    private AudioSource Audio;
     public ParticleSystem dust;
     public float MovementSpeed = 1;
     public float JumpForce = 1;
@@ -12,8 +14,10 @@ public class Movement : MonoBehaviour
     public int maxHealth = 100;
     int PcurrentHealth;
     public HealthBar  Pbar;
+    Vector3 respawnPoint;
     private void Start()
     {
+        respawnPoint = transform.position;
         PcurrentHealth = maxHealth;
         Pbar.SetHealth(PcurrentHealth, maxHealth);
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -39,10 +43,7 @@ public class Movement : MonoBehaviour
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
        
-        if(PcurrentHealth <= 0)
-        {
-            this.enabled = false;
-        }
+    
         
         
     }
@@ -58,7 +59,16 @@ public class Movement : MonoBehaviour
         Pbar.SetHealth(PcurrentHealth, maxHealth);
         if(PcurrentHealth <= 0)
         {
-        Debug.Log("dead");
+         respawn();
+         PcurrentHealth = maxHealth;
+          Pbar.SetHealth(PcurrentHealth, maxHealth);
         }
     }
+
+    public void respawn()
+    {
+        transform.position = respawnPoint;
+    }
+    
+
 }
