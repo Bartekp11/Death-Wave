@@ -25,6 +25,7 @@ public ParticleSystem sword;
         {
              if(Input.GetKeyDown(KeyCode.Z))
         {
+            SoundManagement.PlaySound("attack");
             //camAnim.SetTrigger("shake");
             sword.Play();
             Attack();

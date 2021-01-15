@@ -68,6 +68,12 @@ void Update()
       {
           StopAttack();
       }
+      Enemy sc = gameObject.GetComponent<Enemy>();
+      if(sc.currentHealth < 0 )
+      {
+          this.enabled = false;
+      }
+    
     }
 
     void Move()
@@ -83,11 +89,11 @@ void Update()
 
     void Attack()
     {
-       
         timer = intTimer;
         attackMode = true;
         anim.SetBool("Walk", false);
         anim.SetBool("Attack", true);
+       
 
        
     }

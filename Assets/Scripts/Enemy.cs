@@ -6,10 +6,9 @@ public class Enemy : MonoBehaviour
 {
     public Animator animator;
     public int maxHealth = 100;
-    int currentHealth;
+    public int currentHealth;
     public float speed;
-   //private bool movingRight = true;
-   //public Transform groundDetection;
+
    public HealthBar healthBar;
    private float pauseTime;
    public float startPauseTime;
@@ -23,17 +22,8 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if(pauseTime <= 0)
-        {
-            speed = 2;
-        }
-        else
-        {
-            speed = 0;
-            pauseTime -= Time.deltaTime;
-        }
-
-        if(currentHealth <= 0)
+        
+if(currentHealth <= 0)
         {
             this.enabled = false;
         }    
@@ -44,6 +34,7 @@ public class Enemy : MonoBehaviour
     {
         pauseTime = startPauseTime;
         currentHealth -= damage;
+        SoundManagement.PlaySound("hit2");
         healthBar.SetHealth(currentHealth, maxHealth);
 
         animator.SetTrigger("Hit");
@@ -59,7 +50,9 @@ public class Enemy : MonoBehaviour
         
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
+        
         Destroy(healthBar.gameObject);
+     
        
 
     }

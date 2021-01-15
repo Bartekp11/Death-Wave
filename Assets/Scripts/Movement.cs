@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Movement : MonoBehaviour
 {
-    public AudioClip runSound;
+  
     private AudioSource Audio;
     public ParticleSystem dust;
+    bool ismoving = false;
     public float MovementSpeed = 1;
     public float JumpForce = 1;
     public Animator animator;
@@ -17,6 +18,7 @@ public class Movement : MonoBehaviour
     Vector3 respawnPoint;
     private void Start()
     {
+        Audio = GetComponent<AudioSource>();
         respawnPoint = transform.position;
         PcurrentHealth = maxHealth;
         Pbar.SetHealth(PcurrentHealth, maxHealth);
@@ -29,6 +31,24 @@ public class Movement : MonoBehaviour
         var movement = Input.GetAxis("Horizontal");
 
         animator.SetFloat("Speed", Mathf.Abs(movement));
+        if(movement != 0)
+        {
+            ismoving = true;
+        }
+        else
+        {
+            ismoving = false;
+        }
+        if(ismoving)
+        {
+            if(!Audio.isPlaying)
+            Audio.Play();
+        
+        }
+        else
+        {
+            Audio.Stop();
+        }
         transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
         if((movement < 0 && facingRight) || (movement > 0) && !facingRight)
         {
@@ -39,6 +59,7 @@ public class Movement : MonoBehaviour
            
          if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
         {
+            SoundManagement.PlaySound("jump");
             dust.Play();
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
@@ -56,6 +77,8 @@ public class Movement : MonoBehaviour
      public void TakeDamage(int damage)
     {
         PcurrentHealth -= damage;
+        
+     SoundManagement.PlaySound("hit1");
         Pbar.SetHealth(PcurrentHealth, maxHealth);
         if(PcurrentHealth <= 0)
         {
