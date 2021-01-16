@@ -30,6 +30,21 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Level5");
     }
 
+    public void PlayLevel6()
+    {
+        SceneManager.LoadScene("Level6");
+    }
+
+    public void PlayLevel7()
+    {
+        SceneManager.LoadScene("Level7");
+    }
+
+    public void PlayLevel8()
+    {
+        SceneManager.LoadScene("Level8");
+    }
+
     public void GoToSettings()
     {
         SceneManager.LoadScene("SettingsMenu");
@@ -39,6 +54,7 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    
 
     public void Quit()
         {
