@@ -50,7 +50,6 @@ if(currentHealth <= 0)
         
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
-        
         Destroy(healthBar.gameObject);
      
        

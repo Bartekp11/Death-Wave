@@ -5,8 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class StartLevel : MonoBehaviour
 {
+
+    private int nextSceneToLoad;
      public void Menu()
     {
-        SceneManager.LoadScene("Level2");
+         nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadScene(nextSceneToLoad);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("menu");
     }
 }

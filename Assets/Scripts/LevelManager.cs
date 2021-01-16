@@ -14,11 +14,6 @@ public class LevelManager : MonoBehaviour
     {
         levelIsUnlocked = PlayerPrefs.GetInt("levelIsUnlocked",1);
 
-        for (int i = 0; i < buttons.Length; i ++)
-        {
-            buttons[i].interactable = false;
-        }
-
         for (int i = 0; i < levelIsUnlocked; i ++)
         {
             buttons[i].interactable = true;

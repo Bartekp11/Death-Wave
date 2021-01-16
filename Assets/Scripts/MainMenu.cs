@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayLevel3()
     {
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("Fabula2");
     }
 
     public void PlayLevel4()
@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayLevel5()
     {
-        SceneManager.LoadScene("Level5");
+        SceneManager.LoadScene("Fabula3");
     }
 
     public void PlayLevel6()
@@ -37,7 +37,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayLevel7()
     {
-        SceneManager.LoadScene("Level7");
+        SceneManager.LoadScene("Fabula4");
     }
 
     public void PlayLevel8()

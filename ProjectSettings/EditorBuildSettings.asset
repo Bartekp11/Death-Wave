@@ -18,11 +18,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Level2.unity
     guid: bb0a906ad989a694cb4387852e2e69d3
   - enabled: 1
+    path: Assets/Scenes/Fabula2.unity
+    guid: bf1f1381ea25de44b98bd57de2e1272c
+  - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: 2da8595192e60194dbf448cecb0cc13b
   - enabled: 1
     path: Assets/Scenes/Level4.unity
     guid: f383f69fa5d43c844b7d69722324927a
+  - enabled: 1
+    path: Assets/Scenes/Fabula3.unity
+    guid: 7187d8b5175545545bf7ebe46a498916
   - enabled: 1
     path: Assets/Scenes/Level5.unity
     guid: 78883c44e38bb3c4ea9b4930ff945688
@@ -30,9 +36,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Level6.unity
     guid: 469c6c6ae15007647af874884acec057
   - enabled: 1
+    path: Assets/Scenes/Fabula4.unity
+    guid: b01d91ee78be1ee4d9c7f7182a3f0a8e
+  - enabled: 1
     path: Assets/Scenes/Level7.unity
     guid: c94a31d40a6ec7642a6d45e11eaecfc8
   - enabled: 1
     path: Assets/Scenes/Level8.unity
     guid: 639b33d82e42f844db5bdef7625b9537
+  - enabled: 1
+    path: Assets/Scenes/Fabula5.unity
+    guid: 6cd7fc785d544e14e9aaa72721662f68
   m_configObjects: {}
