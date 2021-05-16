@@ -1,7 +1,7 @@
 ## Team: Bartłomiej Pawlik, Bartłomiej Lach
 
 ### Project description
-Death wave is a medieval platform game made as semester project for "Team project" course at Univeristy of Łódź. Game is available at https://simmer.io/@Bpawlik/deathwave
+Death wave is a medieval platformer game made as semester project for "Team project" course (scrum) at Univeristy of Łódź. Game is available at https://simmer.io/@Bpawlik/deathwave
 
 ### Gameplay  
 Game itself is pretty easy to play. You move around with arrows, jump with "space" attack with "Z". There is 8 levels that u have to complete. Story is based
